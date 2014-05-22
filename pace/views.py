@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-def mp_dict(goal, factor=0, faster=1):
-	target_pace = goal + (goal * faster * factor)
+def mp_dict(goal, factor=0, slower=1):
+	target_pace = goal + (goal * slower * factor)
 	
 	return {'m': target_pace//60,
 	        's': target_pace % 60}
