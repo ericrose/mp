@@ -290,7 +290,6 @@
       $('.dropdown-menu li').click(function(e){
         e.preventDefault();
         var selected = $(this).text();
-        alert($(this).text());
         $(this).parents('.input-group').find('.goalTime').val(selected);
       });
       $("#generate").click(function() {
