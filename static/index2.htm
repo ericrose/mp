@@ -60,7 +60,7 @@
 </div>
   <div class="jumbotron">
 <div class="container">
-        <table class="table table-striped" id="">
+        <table class="table table-striped" id="trainingWeek">
           <thead>
             <tr>
               <th></th>
@@ -187,8 +187,31 @@
     <script src="./js/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript">
+    var jsonData;
     $(document).ready(function() {
 
+$.getJSON( "data/5518.json", function( data ) 
+{  $.each(data.mesocycles.weeks, function(key, value){
+
+  }
+  $('#trainingWeek').append('<tr><td><b>Thursday</b></td><td>7/25/14</td><td>Recovery @8:14:25</td><td>6</td></tr>');
+});
+
+/*$.ajax({
+    type: "GET",
+    url: "http://127.0.0.1:8000/data/5518.json",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    data: "{id: 'none'}",
+    success: function(json) {
+        $("#success").html("json.length=" + json.length);
+        alert("ok");
+    },
+    error: function (xhr, textStatus, errorThrown) {
+        $("#error").html(xhr.responseText);
+        alert(textStatus);
+    }
+});*/
       buildLists('#minutesList', 0, 60, '<ul class="dropdown-menu" id="minutes">', 1);
       buildLists('#hoursList', 2, 6, '<ul class="dropdown-menu minutes" id="hours">', 1);
       buildLists('#weekNav', 18, 0, '<ul class="nav navbar-nav">', -1);

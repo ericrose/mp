@@ -41,7 +41,7 @@
 					{
 						"description": "Medium Long Run @${mlr}",
 						"distance" : "12"
-					},
+					}
 			},
 			{
 					"weekNumber":"16",
@@ -79,10 +79,10 @@
 					{
 						"description": "Marathon pace run w/ 8 mi @${mp}",
 						"distance" : "13"
-					},
+					}
 			}
 			]
-		},
+		}
 
 	]
 }
