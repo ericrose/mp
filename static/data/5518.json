@@ -1,0 +1,88 @@
+{
+	"title": "Advanced Marathoning 55 Miles Per Week 18-Week Schedule",
+	"mesocycles": [
+		{
+			"phase":"1",
+			"description": "Endurance",
+			"weeks": [
+			{
+					"weekNumber":"17",
+					"Monday":
+					{
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					"Tuesday":
+					{
+						"description": "Lactate threshold 8mi with 4 mi @ ${hmp}",
+						"distance" : "8"
+					},
+					"Wednesday":
+					{
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					"Thursday":
+					{
+						"description": "General Aerobic @ ${ga}",
+						"distance" : "9"
+					},
+					"Friday":
+					{
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					"Saturday":
+					{
+						"description": "Recovery",
+						"distance" : "4"
+					},
+					"Sunday":
+					{
+						"description": "Medium Long Run @${mlr}",
+						"distance" : "12"
+					},
+			},
+			{
+					"weekNumber":"16",
+					"Monday":
+					{
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					"Tuesday":
+					{
+						"description": "General aerobic @${ga} + speed w/ 10x100m strides",
+						"distance" : "8"
+					},
+					"Wednesday":
+					{
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					"Thursday":
+					{
+						"description": "General Aerobic @ ${ga}",
+						"distance" : "10"
+					},
+					"Friday":
+					{
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					"Saturday":
+					{
+						"description": "Recovery",
+						"distance" : "4"
+					},
+					"Sunday":
+					{
+						"description": "Marathon pace run w/ 8 mi @${mp}",
+						"distance" : "13"
+					},
+			}
+			]
+		},
+
+	]
+}
