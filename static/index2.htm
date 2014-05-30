@@ -59,9 +59,9 @@
         <h2>Lactate Threshold + Endurance - 18/55 9 Weeks</h2>
 </div>
   <div class="jumbotron">
-<div class="container">
-        <table class="table table-striped" id="trainingWeek">
-          <thead>
+<div class="container" >
+  <table class="table table-striped" id="trainingWeek">
+         <thead>
             <tr>
               <th></th>
               <th>Date</th>
@@ -69,52 +69,8 @@
               <th>Miles</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><b>Monday</b></td>
-              <td>7/23/14</td>
-              <td>Rest or Cross</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td><b>Tuesday</b></td>
-              <td>7/24/14</td>
-              <td>Recovery @8:14:25 + speed with 6 x 100m strides</td>
-              <td>6</td>
-            </tr>
-            <tr class="success">
-              <td><b>Wednesday</b></td>
-              <td>7/24/14</td>
-              <td>Medium long run @8:06:18</td>
-              <td>14</td>
-            </tr>
-            <tr>
-              <td><b>Thursday</b></td>
-              <td>7/25/14</td>
-              <td>Recovery @8:14:25</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <td><b>Friday</b></td>
-              <td>7/26/14</td>
-              <td>Rest or Cross</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td><b>Saturday</b></td>
-              <td>7/27/14</td>
-              <td>Recovery @8:14:25 + speed with 6 x 100m strides</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <td><b>Sunday</b></td>
-              <td>7/28/14</td>
-              <td>Marathon pace run w/ 19k @6:45</td>
-              <td>16</td>
-            </tr>                  
-          </tbody>
-        </table>
-
+          <tbody></tbody>
+        </table> 
         <p><a class="btn btn-lg btn-success" data-toggle="modal" href="#targetsModal">Generate Paces</a></p>
 
       </div>
@@ -154,16 +110,16 @@
                    <input type="text" class="form-control" name="raceDate" id="datepicker" placeholder="The date of your target Marathon">
                  </div>
                    <label for="goalTime">Goal Time</label>
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <div class="input-group-btn" id="hoursList">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Hours <span class="caret"></span></button>
-      </div><!-- /btn-group -->
-      <input type="text" class="form-control goalTime" name="goalHours" id="goalHours">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="input-group">
+                          <div class="input-group-btn" id="hoursList">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Hours <span class="caret"></span></button>
+                          </div><!-- /btn-group -->
+                          <input type="text" class="form-control goalTime" name="goalHours" id="goalHours">
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-lg-6 -->
+                      <div class="col-lg-6">
                   <div class="input-group">
                    <div class="input-group-btn" id="minutesList">
                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Minutes <span class="caret"></span></button>
@@ -187,31 +143,36 @@
     <script src="./js/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    var jsonData;
-    $(document).ready(function() {
+      var nycm = new Date("Sept. 14, 2014");
 
-$.getJSON( "data/5518.json", function( data ) 
-{  $.each(data.mesocycles.weeks, function(key, value){
+      $(document).ready(function() {
 
-  }
-  $('#trainingWeek').append('<tr><td><b>Thursday</b></td><td>7/25/14</td><td>Recovery @8:14:25</td><td>6</td></tr>');
-});
+      $.getJSON( "data/5518.json", function( data ) 
+      {  
+          var tempDate = new Date(nycm.getTime());
+          var today = new Date();
 
-/*$.ajax({
-    type: "GET",
-    url: "http://127.0.0.1:8000/data/5518.json",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-    data: "{id: 'none'}",
-    success: function(json) {
-        $("#success").html("json.length=" + json.length);
-        alert("ok");
-    },
-    error: function (xhr, textStatus, errorThrown) {
-        $("#error").html(xhr.responseText);
-        alert(textStatus);
-    }
-});*/
+          $.each(data.weeks, function(weekIndex, week){
+            $.each(week.days, function(key, day){
+              tempDate = new Date(nycm.getTime());
+              tempDate.setDate(nycm.getDate() - ((parseInt(week.weekNumber) * 7)- (1+parseInt(key))));
+
+              $('#trainingWeek').append('<tr class="' + week.weekNumber +'">'+ 
+                '<td><b>'+ day.day +
+                '</b></td><td>'+ (1 + tempDate.getMonth()) + "/" + tempDate.getDate() + "/" + tempDate.getFullYear() + 
+                '</td><td>' +day.description +
+                '</td><td>'+ day.distance +
+                '</td></tr>');
+            });
+          });
+          var rows = $('table#trainingWeek tr');
+          var sixteen = rows.filter('.16').show();
+          rows.not( sixteen ).hide();
+          $( "td:contains('"+ (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear() +"')").parent().addClass("success");
+      });
+
+
+
       buildLists('#minutesList', 0, 60, '<ul class="dropdown-menu" id="minutes">', 1);
       buildLists('#hoursList', 2, 6, '<ul class="dropdown-menu minutes" id="hours">', 1);
       buildLists('#weekNav', 18, 0, '<ul class="nav navbar-nav">', -1);
@@ -257,7 +218,7 @@ $.getJSON( "data/5518.json", function( data )
     $(function() {
       $( "#datepicker" ).datepicker();
     });
-    </script>
+  </script>
   
 
 </body></html>
