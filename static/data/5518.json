@@ -84,6 +84,48 @@
 						"distance" : "13"
 					}
 					]
+			},
+			{
+					"weekNumber":"15",
+					"phase":"1",
+					"description": "Endurance",
+					"days":[
+					{
+						"day": "Monday",
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					{
+						"day": "Tuesday",
+						"description": "General aerobic @${ga}",
+						"distance" : "10"
+					},
+					{
+						"day": "Wednesday",
+						"description": "Recovery",
+						"distance" : "4"
+					},
+					{
+						"day": "Thursday",
+						"description": "Lactate threshold 8mi with 4 mi @ ${hmp}",
+						"distance" : "8"
+					},
+					{
+						"day":"Friday",
+						"description": "Rest or cross training",
+						"distance" : "0"
+					},
+					{
+						"day": "Saturday",
+						"description": "Recovery",
+						"distance" : "4"
+					},
+					{
+						"day":"Sunday",
+						"description": "Medium Long Run @${mlr}",
+						"distance" : "14"
+					}
+					]
 			}
 			]
 }
