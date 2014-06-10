@@ -7,12 +7,14 @@
 
       $(document).ready(function() {
 
-      var maxPage=18;
+      var maxPage = 18;
 
       $.getJSON( "data/5518.json", function( data )
       {
           var tempDate = new Date(nycm.getTime());
           var today = new Date();
+          alert(data.weeks.length);
+          maxPage = data.weeks.length;
 
           $.each(data.weeks, function(weekIndex, week){
             $.each(week.days, function(key, day){
@@ -27,36 +29,33 @@
                 '</td></tr>');
             });
           });
-          var rows = $('table#trainingWeek tr');
-          var seventeen = rows.filter('.17').show();
-          rows.not( seventeen ).hide();
-          $( "td:contains('"+ (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear() +"')").parent().addClass("success");
+          var todayRow = $( "td:contains('"+ (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear() +"')");
+          $(todayRow).parent().addClass("success");
+          changePage($(todayRow).parent().attr("class").split(" ")[0]);
+          /*FIXME: goto today*/
       });
 
 
-
+      buildLists('#weekNav', maxPage, 0, '<ul class="nav navbar-nav">', -1);
       buildLists('#minutesList', 0, 60, '<ul class="dropdown-menu" id="minutes">', 1);
       buildLists('#hoursList', 2, 6, '<ul class="dropdown-menu minutes" id="hours">', 1);
-      buildLists('#weekNav', 18, 0, '<ul class="nav navbar-nav">', -1);
 
       function buildLists(id, start, end, openTag, direction){
         var html = openTag;
         for(var i=start; (direction) * i < end; i+=direction){
-          html+= '<li><a href="#" id="'+i+'">' + i +'</a></li>';
+          html+= '<li><a href="#" id="'+ id.slice(1) +i+'">' + i +'</a></li>';
         }
         html+='</ul>';
         $(id).append(html);
       }
 
       function changePage(pageNumber){
-/*        if(parseInt(pageNumber) == 1){
+        if(parseInt(pageNumber) == 1){
           $('.next').addClass('disabled');
         } else {
           $('.next').removeClass('disabled');
-          TODO:
-          [] - fix pagination :(
-        }*/
-        var targetPage = $('.navbar-nav li[id='+pageNumber+']');
+        }
+        var targetPage = $('.navbar-nav li').filter(function(){return $(this).text()==pageNumber;});
         $(targetPage).parents('.navbar-nav').find('.active').removeClass('active');
         $(targetPage).addClass('active');
         var rows = $('table#trainingWeek tr');
