@@ -13,7 +13,6 @@
       {
           var tempDate = new Date(nycm.getTime());
           var today = new Date();
-          alert(data.weeks.length);
           maxPage = data.weeks.length;
 
           $.each(data.weeks, function(weekIndex, week){
