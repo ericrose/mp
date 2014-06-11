@@ -1,18 +1,14 @@
 /**
 * mp.js v0.0.1 by @an_eric
-* Copyright 2013 Eric Rose
+* Copyright 2014 Eric Rose
 * http://www.apache.org/licenses/LICENSE-2.0
 */
-var nycm = new Date("Oct. 5, 2014");
 
 $(document).ready(function() {
 
-  var paceCookie = document.cookie;
+      var racerObj = {};
+      buildRacerObj();
 
-  if(document.cookie)
-
-
-      $('#targetsModal').modal('show');
 
       $.ajax({
       url: "data/5518.json",
@@ -20,17 +16,17 @@ $(document).ready(function() {
       dataType: 'json',
       success: function( data )
       {
-          var tempDate = new Date(nycm.getTime());
+          var tempDate = new Date(racerObj['raceDate'].getTime());
 
           $.each(data.weeks, function(weekIndex, week){
             $('#weekTitle').append('<div id="title'+week.weekNumber+'"><h1 id="mesocycle'+week.weekNumber+'">Mesocycle '+week.phase+':</h1> ' +
               '<h2 id="description'+week.weekNumber+'">'+week.description+'</h2></div>');
 
             $.each(week.days, function(key, day){
-              tempDate = new Date(nycm.getTime());
+              tempDate = new Date(racerObj['raceDate'].getTime());
 
               //weeks and days are zero indexed
-              tempDate.setDate(nycm.getDate() - (((parseInt(week.weekNumber) + 1) * 7) - (1 + parseInt(key))));
+              tempDate.setDate(racerObj['raceDate'].getDate() - (((parseInt(week.weekNumber) + 1) * 7) - (1 + parseInt(key))));
 
               $('#trainingWeek').append('<tr class="' + week.weekNumber +'">'+
                 '<td><b>'+ day.day +
@@ -44,10 +40,24 @@ $(document).ready(function() {
           initPage(data.weeks.length);
         }  
       });
-      
+    
+      function buildRacerObj(){
+        if($.cookie('mpForm')){
+          var racerInfo = $.cookie('mpForm').split('&');
+          $.each(racerInfo, function(key,value){
+           keyValue = value.split('=');
+            if(keyValue[0] =='raceDate'){
+              racerObj[keyValue[0]] = new Date(keyValue[1].replace(/\%2F/g, '/'));
+            } else {
+              racerObj[keyValue[0]] = keyValue[1];
+            }          
+          });
+        } else {
+          $('#targetsModal').modal('show');
+        }
+      }
+
       function initPage(totalWeeks){
-
-
         var today = new Date();
         var todayRow = $( "td:contains('"+ (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear() +"')");
         $(todayRow).parent().addClass("success");
@@ -103,6 +113,10 @@ $(document).ready(function() {
         changePage(parseInt($('.navbar-nav').find('.active').text())+1);
       });
       $("#generate").click(function() {
+        $.cookie('mpForm', $("#targetsForm").serialize(), { expires: 365, path: '/' });
+        $('#targetsModal').modal('hide');
+        buildRacerObj();
+      /*
         $.post( ".", $("#targetsForm").serialize(),
                 function(data) {
                   $("#signupSuccess").show();
@@ -119,7 +133,7 @@ $(document).ready(function() {
               })
               .always(function() {
                 $("#targetsModal").modal('hide');
-              });
+              });*/
       });
     });
     $(function() {
