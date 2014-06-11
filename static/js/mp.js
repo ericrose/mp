@@ -3,7 +3,7 @@
 * Copyright 2013 Eric Rose
 * http://www.apache.org/licenses/LICENSE-2.0
 */
-     var nycm = new Date("Sept. 28, 2014");
+     var nycm = new Date("Oct. 5, 2014");
 
       $(document).ready(function() {
 
