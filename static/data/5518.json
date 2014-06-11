@@ -214,7 +214,7 @@
 			{
 					"weekNumber":"12",
 					"phase":"1",
-					"description": "Recovery",
+					"description": "Recovery week",
 					"days": [
 						{
 							"day": "Monday",
@@ -292,6 +292,468 @@
 							"day":"Sunday",
 							"description": "Long Run @${lr}",
 							"distance" : "18"
+						}
+					]
+			},
+						{
+					"weekNumber":"10",
+					"phase":"2",
+					"description": "Lactate Threshold + Endurance",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+						{
+					"weekNumber":"9",
+					"phase":"2",
+					"description": "Lactate Threshold + Endurance",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+						{
+					"weekNumber":"8",
+					"phase":"2",
+					"description": "Recovery week",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"7",
+					"phase":"2",
+					"description": "Lactate Threshold + Endurance",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"6",
+					"phase":"3",
+					"description": "Race Preparation",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"5",
+					"phase":"3",
+					"description": "Race Preparation",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"4",
+					"phase":"3",
+					"description": "Race Preparation",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"3",
+					"phase":"3",
+					"description": "Race Preparation",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"2",
+					"phase":"4",
+					"description": "Taper and Race",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"1",
+					"phase":"4",
+					"description": "Taper and Race",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
+						}
+					]
+			},
+			{
+					"weekNumber":"0",
+					"phase":"4",
+					"description": "Race Week",
+					"days": [
+						{
+							"day": "Monday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day": "Tuesday",
+							"description": "General aerobic + speed 8mi @${ga} w/ 10x100m strides",
+							"distance" : "8"
+						},
+						{
+							"day":"Wednesday",
+							"description": "Recovery",
+							"distance" : "5"
+						},
+						{
+							"day":"Thursday",
+							"description": "General Aerobic @${ga}",
+							"distance" : "8"
+						},
+						{
+							"day":"Friday",
+							"description": "Rest or cross training",
+							"distance" : "0"
+						},
+						{
+							"day":"Saturday",
+							"description": "Recovery",
+							"distance" : "4"
+						},
+						{
+							"day":"Sunday",
+							"description": "Medium Long Run @${mlr}",
+							"distance" : "12"
 						}
 					]
 			}	
