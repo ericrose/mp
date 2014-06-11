@@ -9,7 +9,6 @@ $(document).ready(function() {
       var racerObj = {};
       buildRacerObj();
 
-
       $.ajax({
       url: "data/5518.json",
       async: false,
@@ -28,6 +27,7 @@ $(document).ready(function() {
               //weeks and days are zero indexed
               tempDate.setDate(racerObj['raceDate'].getDate() - (((parseInt(week.weekNumber) + 1) * 7) - (1 + parseInt(key))));
 
+              //What to do about two-a-days?
               $('#trainingWeek').append('<tr class="' + week.weekNumber +'">'+
                 '<td><b>'+ day.day +
                 '</b></td><td>'+ (1 + tempDate.getMonth()) + "/" + tempDate.getDate() + "/" + tempDate.getFullYear() +
