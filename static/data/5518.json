@@ -752,8 +752,8 @@
 						},
 						{
 							"day":"Sunday",
-							"description": "Medium Long Run @${mlr}",
-							"distance" : "12"
+							"description": "Race Day",
+							"distance" : "26.2"
 						}
 					]
 			}	
