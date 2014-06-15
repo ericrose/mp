@@ -112,6 +112,7 @@ $(document).ready(function() {
         $(this).parents('.input-group').find('.goalTime').val(selected);
       });
       $('.navbar-nav li').click(function(e){
+        e.preventDefault();
         changePage($(this).text());
       });
       $('.next').click(function(e){
