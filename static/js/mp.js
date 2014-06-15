@@ -8,13 +8,34 @@ $(document).ready(function() {
 
       var racerObj = {};
       buildRacerObj();
+      if(racerObj['raceDate']){
+        buildPlan();
+      }
 
-      $.ajax({
-      url: "data/5518.json",
-      async: false,
-      dataType: 'json',
-      success: function( data )
-      {
+    
+      function buildRacerObj(){
+        if($.cookie('mpForm')){
+          var racerInfo = $.cookie('mpForm').split('&');
+          $.each(racerInfo, function(key,value){
+           keyValue = value.split('=');
+            if(keyValue[0] =='raceDate'){
+              racerObj[keyValue[0]] = new Date(keyValue[1].replace(/\%2F/g, '/'));
+            } else {
+              racerObj[keyValue[0]] = keyValue[1];
+            }
+          });
+        } else {
+          $('#targetsModal').modal('show');
+        }
+      }
+
+      function buildPlan(){
+        $.ajax({
+        url: "data/5518.json",
+        async: false,
+        dataType: 'json',
+        success: function( data )
+        {
           var tempDate = new Date(racerObj['raceDate'].getTime());
 
           $.each(data.weeks, function(weekIndex, week){
@@ -34,27 +55,12 @@ $(document).ready(function() {
                 '</td><td>' +day.description +
                 '</td><td>'+ day.distance +
                 '</td></tr>');
+              });
             });
-          });
 
-          initPage(data.weeks.length);
-        }  
-      });
-    
-      function buildRacerObj(){
-        if($.cookie('mpForm')){
-          var racerInfo = $.cookie('mpForm').split('&');
-          $.each(racerInfo, function(key,value){
-           keyValue = value.split('=');
-            if(keyValue[0] =='raceDate'){
-              racerObj[keyValue[0]] = new Date(keyValue[1].replace(/\%2F/g, '/'));
-            } else {
-              racerObj[keyValue[0]] = keyValue[1];
-            }          
-          });
-        } else {
-          $('#targetsModal').modal('show');
-        }
+           initPage(data.weeks.length);
+         }
+        });
       }
 
       function initPage(totalWeeks){
@@ -63,7 +69,7 @@ $(document).ready(function() {
         $(todayRow).parent().addClass("success");
         buildLists('#weekNav', totalWeeks -1, 1, '<ul class="nav navbar-nav">', -1);
         //what if training hasn't started yet???
-        changePage($(todayRow).parent().attr("class").split(" ")[0]);      
+        changePage($(todayRow).parent().attr("class").split(" ")[0]);
         
         buildLists('#minutesList', 0, 60, '<ul class="dropdown-menu" id="minutes">', 1);
         buildLists('#hoursList', 2, 6, '<ul class="dropdown-menu minutes" id="hours">', 1);
@@ -80,7 +86,11 @@ $(document).ready(function() {
 
       function changePage(pageNumber){
         var intPage = parseInt(pageNumber);
-        (intPage==0) ? $('.next').hide() : $('.next').show();
+        if (intPage===0) {
+          $('.next').hide();
+          } else {
+          $('.next').show();
+        }
         (intPage==parseInt($('.navbar-nav li').eq(0).text())) ? $('.previous').hide() : $('.previous').show();
 
         var targetPage = $('.navbar-nav li').filter(function(){return $(this).text()==pageNumber;});
@@ -116,6 +126,7 @@ $(document).ready(function() {
         $.cookie('mpForm', $("#targetsForm").serialize(), { expires: 365, path: '/' });
         $('#targetsModal').modal('hide');
         buildRacerObj();
+        buildPlan();
       /*
         $.post( ".", $("#targetsForm").serialize(),
                 function(data) {
