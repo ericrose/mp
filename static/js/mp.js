@@ -12,7 +12,7 @@ $(document).ready(function() {
         buildPlan();
       }
 
-    
+
       function buildRacerObj(){
         if($.cookie('mpForm')){
           var racerInfo = $.cookie('mpForm').split('&');
@@ -25,6 +25,7 @@ $(document).ready(function() {
             }
           });
         } else {
+          modalInit();
           $('#targetsModal').modal('show');
         }
       }
@@ -70,9 +71,14 @@ $(document).ready(function() {
         buildLists('#weekNav', totalWeeks -1, 1, '<ul class="nav navbar-nav">', -1);
         //what if training hasn't started yet???
         changePage($(todayRow).parent().attr("class").split(" ")[0]);
-        
+      }
+
+      function modalInit(){
         buildLists('#minutesList', 0, 60, '<ul class="dropdown-menu" id="minutes">', 1);
         buildLists('#hoursList', 2, 6, '<ul class="dropdown-menu minutes" id="hours">', 1);
+        $("#racePlanList li a").click(function(){
+          $("#racePlanButton").text(this.text);
+        });
       }
 
       function buildLists(id, start, end, openTag, direction){
@@ -151,3 +157,7 @@ $(document).ready(function() {
     $(function() {
       $( "#datepicker" ).datepicker();
     });
+$(document).keyup(function(e){
+    if(e.keyCode === 27)
+      $('#targetsModal').modal('toggle');
+});
