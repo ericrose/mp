@@ -4,6 +4,8 @@
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 
+var dow = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 $(document).ready(function() {
 
       var racerObj = {};
@@ -51,7 +53,7 @@ $(document).ready(function() {
 
               //What to do about two-a-days?
               $('#trainingWeek').append('<tr class="' + week.weekNumber +'">'+
-                '<td><b>'+ day.day +
+                '<td><b>'+ dow[tempDate.getDay()] +
                 '</b></td><td>'+ (1 + tempDate.getMonth()) + "/" + tempDate.getDate() + "/" + tempDate.getFullYear() +
                 '</td><td>' +day.description +
                 '</td><td>'+ day.distance +
