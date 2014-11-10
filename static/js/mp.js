@@ -58,7 +58,7 @@ $(document).ready(function() {
                 '</b></td><td>'+ (1 + tempDate.getMonth()) + "/" + tempDate.getDate() + "/" + tempDate.getFullYear() +
                 '</td><td>' +day.description +
                 '</td><td>'+ day.distance +
-                '</td><td class="col-md-1"><input type="text" class="form-control"></td></tr>');
+                '</td><td class="col-md-1"><input type="text" class="form-control" id="'+tempDate.toISOString().substring(0,10)+'"></td></tr>');
               });
             });
 
@@ -74,6 +74,15 @@ $(document).ready(function() {
         buildLists('#weekNav', totalWeeks -1, 1, '<ul class="nav navbar-nav">', -1);
         //what if training hasn't started yet???
         changePage($(todayRow).parent().attr("class").split(" ")[0]);
+        $('#trainingWeek tr input').change(function(){
+          //post form id, form val, and user id to persistence layer
+          //$.post( "ajax/test.html", function( data ) {
+          //  $( ".result" ).html( data );
+          //});
+          //alert($(this).val());
+          //alert(this.id);
+          //submit form, but need to put the whole thing in a form
+        });
       }
 
       function modalInit(){
