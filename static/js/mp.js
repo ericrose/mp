@@ -44,6 +44,7 @@ $(document).ready(function() {
           $.each(data.weeks, function(weekIndex, week){
             $('#weekTitle').append('<div id="title'+week.weekNumber+'"><h1 id="mesocycle'+week.weekNumber+'">Mesocycle '+week.phase+':</h1> ' +
               '<h2 id="description'+week.weekNumber+'">'+week.description+'</h2></div>');
+            $('#trainingWeek').append('<tr class="' + week.weekNumber +'">"' + "<th>Day</th><th>Date</th><th>Description</th><th>Mileage</th><th>Actual</th></tr>")
 
             $.each(week.days, function(key, day){
               tempDate = new Date(racerObj['raceDate'].getTime());
@@ -57,7 +58,7 @@ $(document).ready(function() {
                 '</b></td><td>'+ (1 + tempDate.getMonth()) + "/" + tempDate.getDate() + "/" + tempDate.getFullYear() +
                 '</td><td>' +day.description +
                 '</td><td>'+ day.distance +
-                '</td></tr>');
+                '</td><td class="col-md-1"><input type="text" class="form-control"></td></tr>');
               });
             });
 
