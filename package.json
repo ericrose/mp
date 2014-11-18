@@ -1,0 +1,26 @@
+{
+  "name": "mp",
+  "version": "0.0.0",
+  "description": "Marathon training calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericrose/mp.git"
+  },
+  "keywords": [
+    "marathon",
+    "running"
+  ],
+  "author": "@an_eric",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "bugs": {
+    "url": "https://github.com/ericrose/mp/issues"
+  },
+  "homepage": "https://github.com/ericrose/mp",
+  "dependencies": {
+    "express": "^4.10.2"
+  }
+}
